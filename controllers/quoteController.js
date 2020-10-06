@@ -17,7 +17,7 @@ const quote_category = async (req, res) => {
   const category = req.params.category;
 
   // finding a random quotes
-  const Documentcount = await Quote.countDocuments();
+  const Documentcount = await Quote.where({category: category}).countDocuments();
   const randomNumber = Math.floor(Math.random() * Documentcount);
   const randomQuote = await Quote.findOne()
     .where({ category: category })
