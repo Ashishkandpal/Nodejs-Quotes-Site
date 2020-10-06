@@ -1,0 +1,33 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  <div class="create-quote content">
+    <form action = "/quotes" method = "POST">
+
+      <div class="form-group">
+        <label for="title">Quote By:</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="form-control" id="category" name="category" required>
+          <option value="love">Love</option>
+          <option value="sad">Sad</option>
+          <option value="motivational">Motivational</option>
+          <option value="happy">Happy</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="body">Quote Body: </label>
+        <textarea class="form-control" id="body" name="body" required rows="3"></textarea>
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <%- include("../partials/footer.ejs") %>
+</body>
+</html

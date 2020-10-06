@@ -1,0 +1,38 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+
+    <%- include("../partials/nav.ejs") %>
+    <div class="container">
+        <div class="section">
+            <div class="card bg-dark text-white">
+                <img src="/images/pexels-pixabay-36717.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title"><%=category%></h5>
+                    <p class="card-text"><%=randomQuote.body%></p>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <div class="quotes content">
+                <% if (quotes.length > 0) { %>
+                <% quotes.forEach(quote => { %>
+                <a class="single" href="/quotes/<%- quote._id %>">
+                    <h3 class="title"><%= quote.title %></h3>
+                    <p class="body"><%= quote.body %></p>
+                </a>
+                <% }) %>
+                <% } else {%>
+                <p>There are no quotes right now bro </p>
+                <%}%>   
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/materialize/js/materialize.js"></script>
+        
+    <%- include("../partials/footer.ejs") %>
+</body>
+
+</html>

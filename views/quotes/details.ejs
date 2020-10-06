@@ -1,0 +1,45 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>   
+    <body>
+        <%- include("../partials/nav.ejs") %>
+        <div class="container">
+        <div class="details content">
+            <div class="card details">
+                <div class="card-header">
+                  Quote
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p><%- quote.body %></p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title"> <%- quote.title %></cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+ 
+            <div class="image content"><a class="delete" data-doc="<%= quote._id %>">
+                             <img src="/trashcan.svg" alt="delete icon">
+                          </a>
+            </div>
+        </div>
+        </div>
+        
+    <%- include("../partials/footer.ejs") %>
+
+    <script>
+        const trashcan = document.querySelector('a.delete');
+
+        trashcan.addEventListener('click', (e) => {
+            const endpoint = `/quotes/${trashcan.dataset.doc}`;
+        
+        fetch(endpoint, {
+            method: 'DELETE'
+        })
+        .then((response) => response.json())
+        .then((data) => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+        })
+    </script>
+
+    </body>
+
+</html>

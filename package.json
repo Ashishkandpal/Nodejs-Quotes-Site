@@ -1,0 +1,25 @@
+{
+  "name": "quotes-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Ashish Kandpal",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0"
+  }
+}
